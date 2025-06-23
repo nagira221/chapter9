@@ -1,15 +1,34 @@
-//TIP コードを<b>実行</b>するには、<shortcut actionId="Run"/> を押すか
-// ガターの <icon src="AllIcons.Actions.Execute"/> アイコンをクリックします。
 public class Main {
     public static void main(String[] args) {
-        //TIP ハイライトされたテキストにキャレットがある状態で <shortcut actionId="ShowIntentionActions"/> を押すと
-        // IntelliJ IDEA によるその修正案を確認できます。
-        System.out.printf("Hello and welcome!");
+        Sword s = new Sword();
+        s.name = "炎の剣";
+        s.damage = 10;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP <shortcut actionId="Debug"/> を押してコードのデバッグを開始します。<icon src="AllIcons.Debugger.Db_set_breakpoint"/> ブレークポイントを 1 つ設定しましたが、
-            // <shortcut actionId="ToggleLineBreakpoint"/> を押すといつでも他のブレークポイントを追加できます。
-            System.out.println("i = " + i);
-        }
+        Hero h1;
+        h1 = new Hero("ミナト");
+        System.out.println(h1.name);
+        //h1.name = "ミナト";
+        h1.hp = 100;
+        h1.sword = s;
+        System.out.println("現在の武器は" + h1.sword.name);
+        Hero h2 = new Hero();
+        System.out.println(h2.name);
+        //h2.name = "アサカ";
+        h2.hp = 100;
+        h2 = h1;
+        h2.hp = 200;
+        System.out.println(h1.hp);
+        Wizard w = new Wizard();
+        w.name = "スガワラ";
+        w.hp = 50;
+        w.heal(h1);
+        w.heal(h2);
+        w.heal(h2);
+
+        String str = new String("こんにちは");
+        System.out.println(str);
+
+        System.out.println(h1.hp);
+
     }
 }
